@@ -45,15 +45,16 @@ class StateMachine:
 
 if __name__=="__main__":
     print str(sys.argv[0]) + "\n"
-    print str(sys.argv[1]) + "\n"
     
+    if(len(sys.argv))>1:
+        print str(sys.argv[1]) + "\n"    
+        if int(sys.argv[1]) > 0 and int(sys.argv[1]) < 7:
+            x = int(sys.argv[1])
+    else:
+        x = input("Welche Konfig 1-6 ? ")    
+        
     setPara = [1,2,3,4,5,6,7,8]
     m = StateMachine()
-    
-    if int(sys.argv[1]) > 0 and int(sys.argv[1]) < 7:
-        x = int(sys.argv[1])
-    else:
-        x = input("Welche Konfig 1-6 ? ")
     
     if x == 1:
         setPara = [1,2,3,4,5,6,7,8]
@@ -72,6 +73,4 @@ if __name__=="__main__":
         print"Nicht gueltig"
 
     m.run(setPara)
-    
-
     
